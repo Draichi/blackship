@@ -12,9 +12,8 @@
           </v-stepper-header>
           <v-stepper-items>
             <v-stepper-content step="1">
-              <v-layout>
-                <v-flex>
-                  <div class="display-2">Enter your destination</div>
+              <v-card height="350px">
+                <div class="display-2">Enter your destination</div>
                   <v-select
                     v-bind:items="selectItems"
                     v-model="selectEl"
@@ -22,10 +21,9 @@
                     single-line
                     bottom
                   ></v-select>
-                </v-flex>
-              </v-layout>
-              <v-btn color="primary" @click.native="e1 = 2">Continue</v-btn>
-              <v-btn flat>Cancel</v-btn>
+                <v-btn color="primary" @click.native="e1 = 2">Continue</v-btn>
+                <v-btn flat>Cancel</v-btn>
+              </v-card>
             </v-stepper-content>
             <v-stepper-content step="2">
               <v-card height="350px">
@@ -42,30 +40,28 @@
               </v-card>
             </v-stepper-content>
             <v-stepper-content step="3">
-              <v-layout>
-                <v-flex xs12>
-                  <div class="display-2">Size</div>
-                  <v-form v-model="valid">
-                    <v-text-field
-                      label="Length (cm)"
-                      v-model="length"
-                      required
-                    ></v-text-field>
-                    <v-text-field
-                      label="Width (cm)"
-                      v-model="width"
-                      required
-                    ></v-text-field>
-                    <v-text-field
-                      label="Height (cm)"
-                      v-model="height"
-                      required
-                    ></v-text-field>
-                  </v-form>
-                </v-flex>
-              </v-layout>
-              <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
-              <v-btn flat>Cancel</v-btn>
+              <v-card height="350px">
+                <div class="display-2">Size</div>
+                <v-form v-model="valid">
+                  <v-text-field
+                    label="Length (cm)"
+                    v-model="length"
+                    required
+                  ></v-text-field>
+                  <v-text-field
+                    label="Width (cm)"
+                    v-model="width"
+                    required
+                  ></v-text-field>
+                  <v-text-field
+                    label="Height (cm)"
+                    v-model="height"
+                    required
+                  ></v-text-field>
+                </v-form>
+                <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
+                <v-btn flat>Cancel</v-btn>
+              </v-card>
             </v-stepper-content>
           </v-stepper-items>
         </v-stepper>

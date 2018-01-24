@@ -1,6 +1,6 @@
 <img src="https://forthebadge.com/images/badges/designed-in-ms-paint.svg"/>
 <img src="https://forthebadge.com/images/badges/made-with-crayons.svg"/>
-<img src="https://forthebadge.com/images/badges/contains-cat-gifs.svg"/>
+<img src="https://forthebadge.com/images/badges/certified-cousin-terio.svg"/>
 
 # Shipping Calculator
 
