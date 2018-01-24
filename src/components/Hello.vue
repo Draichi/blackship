@@ -12,7 +12,7 @@
           </v-stepper-header>
           <v-stepper-items>
             <v-stepper-content step="1">
-              <v-card height="350px">
+              <v-card height="350px" class="pt-4">
                 <div class="display-2">Enter your destination</div>
                   <v-select
                     v-bind:items="selectItems"
@@ -25,7 +25,7 @@
               </v-card>
             </v-stepper-content>
             <v-stepper-content step="2">
-              <v-card height="350px">
+              <v-card height="350px" class="pt-4">
                 <div class="display-2">Weight</div>
                 <v-form v-model="valid">
                   <v-text-field
@@ -39,7 +39,7 @@
               </v-card>
             </v-stepper-content>
             <v-stepper-content step="3">
-              <v-card height="350px">
+              <v-card height="350px" class="pt-4">
                 <div class="display-2">Size</div>
                 <v-form v-model="valid">
                   <v-text-field
