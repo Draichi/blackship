@@ -22,7 +22,6 @@
                     bottom
                   ></v-select>
                 <v-btn color="primary" @click.native="e1 = 2">Continue</v-btn>
-                <v-btn flat>Cancel</v-btn>
               </v-card>
             </v-stepper-content>
             <v-stepper-content step="2">
@@ -36,7 +35,7 @@
                   ></v-text-field>
                 </v-form>
                 <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
-                <v-btn flat>Cancel</v-btn>
+                <v-btn flat @click.native="e1 = 1">Cancel</v-btn>
               </v-card>
             </v-stepper-content>
             <v-stepper-content step="3">
@@ -59,8 +58,8 @@
                     required
                   ></v-text-field>
                 </v-form>
-                <v-btn color="primary" @click.native="e1 = 1">Continue</v-btn>
-                <v-btn flat>Cancel</v-btn>
+                <v-btn color="primary" @click.native="onSubmit">Continue</v-btn>
+                <v-btn flat @click.native="e1 = 2">Cancel</v-btn>
               </v-card>
             </v-stepper-content>
           </v-stepper-items>
@@ -86,15 +85,18 @@
         weight: '',
         length: '',
         width: '',
-        height: '',
-        nameRules: [
-          (v) => !!v || 'Name is required',
-          (v) => v.length <= 10 || 'Name must be less than 10 characters'
-        ],
-        emailRules: [
-          (v) => !!v || 'E-mail is required',
-          (v) => /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-        ]
+        height: ''
+      }
+    },
+    methods: {
+      onSubmit () {
+        const rate = {
+          weight: this.weight,
+          length: this.length,
+          width: this.width,
+          height: this.height
+        }
+        console.log(rate)
       }
     }
   }
