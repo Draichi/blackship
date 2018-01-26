@@ -65,7 +65,7 @@
           </v-stepper-items>
         </v-stepper>
         <template v-if="searchMode">
-          <rate :obj='obj' />
+          <rate :searchObj='searchObj' />
         </template>
       </v-flex>
     </v-layout>
@@ -92,7 +92,7 @@
         width: '',
         height: '',
         searchMode: false,
-        obj: {}
+        searchObj: {}
       }
     },
     components: {
@@ -100,7 +100,7 @@
     },
     methods: {
       onSubmit () {
-        this.obj = {
+        this.searchObj = {
           width: this.width,
           length: this.length,
           weight: this.weight,

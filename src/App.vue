@@ -41,7 +41,7 @@
           {icon: 'bubble_chart', title: 'Inspire'}
         ],
         miniVariant: true,
-        title: 'Blackship'
+        title: 'Calculator'
       }
     }
   }
