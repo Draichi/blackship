@@ -26,7 +26,7 @@
   const FeedQuery = gql `
     query allPosts {
       allPosts(filter: {
-        countryName_in:"po"
+        countryName_in:"CHINA"
       }) {
         countryName
         countryCode

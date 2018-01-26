@@ -2,6 +2,8 @@
   <v-app light>
     <v-navigation-drawer
       fixed
+      clipped
+      hide-overlay
       :mini-variant="miniVariant"
       v-model="drawer"
       app
@@ -14,7 +16,7 @@
           exact
         >
           <v-list-tile-action>
-            <v-icon light v-html="item.icon"></v-icon>
+            <v-icon light v-html="item.icon" :to="item.link"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="item.title"></v-list-tile-title>
@@ -36,9 +38,9 @@
   export default {
     data () {
       return {
-        drawer: false,
+        drawer: true,
         items: [
-          {icon: 'bubble_chart', title: 'Inspire'}
+          {icon: 'home', title: 'Home', link: '/'}
         ],
         miniVariant: true,
         title: 'Calculator'
