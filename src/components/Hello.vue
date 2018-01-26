@@ -2,7 +2,7 @@
   <v-container>
     <v-layout>
       <v-flex xs12 sm10 offset-sm1>
-        <v-stepper v-model="e1">
+        <v-stepper v-if="!searchMode" v-model="e1">
           <v-stepper-header>
             <v-stepper-step step="1" :complete="e1 > 1">Country</v-stepper-step>
             <v-divider></v-divider>
@@ -64,12 +64,17 @@
             </v-stepper-content>
           </v-stepper-items>
         </v-stepper>
+        <template v-if="searchMode">
+          <rate :obj='obj' />
+        </template>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
+  import Rate from './Rate.vue'
+
   export default {
     data () {
       return {
@@ -85,18 +90,24 @@
         weight: '',
         length: '',
         width: '',
-        height: ''
+        height: '',
+        searchMode: false,
+        obj: {}
       }
+    },
+    components: {
+      'rate': Rate
     },
     methods: {
       onSubmit () {
-        const rate = {
-          weight: this.weight,
-          length: this.length,
+        this.obj = {
           width: this.width,
-          height: this.height
+          length: this.length,
+          weight: this.weight,
+          height: this.height,
+          country: this.selectEl.text
         }
-        console.log(rate)
+        this.searchMode = true
       }
     }
   }

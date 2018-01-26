@@ -16,7 +16,7 @@ const RateType = new GraphQLObjectType({
         "countryCode": {type: GraphQLString},
         "regionCode": {type: GraphQLInt},
         "maxLength": {type: GraphQLInt},
-        "maxLWH": {type: GraphQLInt},
+        "maxLWH": {type: GraphQLString},
         "method": {type: GraphQLString},
         "minWeight": {type: GraphQLInt},
         "maxWeight": {type: GraphQLInt},
@@ -28,7 +28,7 @@ const RateType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-        rates: {
+        allRates: {
             type: new GraphQLList(RateType),
             resolve(parentValue) {
                 return axios.get('http://localhost:3000/rates')
