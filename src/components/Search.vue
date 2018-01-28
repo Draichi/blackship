@@ -76,7 +76,7 @@
     data () {
       return {
         selectItems: [
-          { text: 'china' },
+          { text: 'BAHRAIN' },
           { text: 'BELARUS' },
           { text: 'BHUTAN' },
           { text: 'BRUNEI' }

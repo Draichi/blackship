@@ -12,11 +12,12 @@
         <v-list-tile
           value="true"
           v-for="(item, i) in items"
+          :to="item.link"
           :key="i"
           exact
         >
           <v-list-tile-action>
-            <v-icon light v-html="item.icon" :to="item.link"></v-icon>
+            <v-icon light v-html="item.icon"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="item.title"></v-list-tile-title>
@@ -26,7 +27,9 @@
     </v-navigation-drawer>
     <v-toolbar fixed app class="primary white--text">
       <v-toolbar-side-icon dark @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <router-link to="/" tag="span" style="cursor: pointer">
+        <v-toolbar-title v-text="this.$route.name"></v-toolbar-title>
+      </router-link>
     </v-toolbar>
     <v-content>
       <router-view></router-view>
