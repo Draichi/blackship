@@ -1,8 +1,10 @@
 <template>
   <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
+      <v-btn to="/">
+        <v-icon>home</v-icon>
+      </v-btn>
       <v-card>
-        {{ this.searchObj }}
         <v-list three-line>
           <template v-for="(item, index) in allPosts">
             <v-list-tile v-bind:key="index">
@@ -22,42 +24,27 @@
 </template>
 
 <script>
-  import gql from 'graphql-tag'
-  const FeedQuery = gql `
-    query allPosts {
-      allPosts(filter: {
-        countryName_in:"CHINA"
-      }) {
-        countryName
-        countryCode
-        regionCode
-        maxLength
-        maxLWH
-        method
-        minWeight
-        maxWeight
-        rate
-      }
-    }
-`
+  import { FeedQuery } from '../constants/graphql'
   export default {
     data () {
       return {
-        allPosts: {}
+        allPosts: {},
+        variaveis: {
+          country: String(this.$store.state.searchObj.country)
+        }
       }
     },
     apollo: {
       allPosts: {
-        query: FeedQuery
-      }
-    },
-    props: {
-      searchObj: {
-        type: Object,
-        default: function () {
-          return { description: '', imageUrl: '' }
+        query: FeedQuery,
+        variables () {
+          return this.variaveis
+        },
+        skip () {
+          return !this.variaveis
         }
       }
-    }
+    },
+    name: 'Rate'
   }
 </script>

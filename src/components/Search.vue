@@ -2,7 +2,7 @@
   <v-container>
     <v-layout>
       <v-flex xs12 sm10 offset-sm1>
-        <v-stepper v-if="!searchMode" v-model="e1">
+        <v-stepper v-model="e1">
           <v-stepper-header>
             <v-stepper-step step="1" :complete="e1 > 1">Country</v-stepper-step>
             <v-divider></v-divider>
@@ -64,9 +64,6 @@
             </v-stepper-content>
           </v-stepper-items>
         </v-stepper>
-        <template v-if="searchMode">
-          <rate :searchObj='searchObj' />
-        </template>
       </v-flex>
     </v-layout>
   </v-container>
@@ -79,10 +76,10 @@
     data () {
       return {
         selectItems: [
-          { text: 'Oi' },
-          { text: 'Oiii' },
-          { text: 'Oiiii' },
-          { text: 'Oiiiii' }
+          { text: 'china' },
+          { text: 'BELARUS' },
+          { text: 'BHUTAN' },
+          { text: 'BRUNEI' }
         ],
         selectEl: null,
         e1: 0,
@@ -90,9 +87,7 @@
         weight: '',
         length: '',
         width: '',
-        height: '',
-        searchMode: false,
-        searchObj: {}
+        height: ''
       }
     },
     components: {
@@ -100,14 +95,15 @@
     },
     methods: {
       onSubmit () {
-        this.searchObj = {
+        const searchObj = {
           width: this.width,
           length: this.length,
           weight: this.weight,
           height: this.height,
           country: this.selectEl.text
         }
-        this.searchMode = true
+        this.$store.state.searchObj = searchObj
+        this.$router.push('/rate')
       }
     }
   }

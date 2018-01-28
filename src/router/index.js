@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Search from '@/components/Search'
+import Rate from '@/components/Rate'
 
 Vue.use(Router)
 
@@ -8,12 +9,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Search',
+      component: Search
     },
     {
       path: '*',
-      redirect: Hello
+      redirect: Search
+    },
+    {
+      path: '/rate',
+      name: 'Rate',
+      component: Rate,
+      props: true
     }
   ],
   mode: 'history'
