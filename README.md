@@ -8,6 +8,8 @@
 [API](https://api.graph.cool/simple/v1/cjcupexrw13wv0152imgofd8l "api")
 
 
+Vue + Vuex + Vuetify + Apollo + Graphcool
+
 ## Build Setup
 
 ``` bash
