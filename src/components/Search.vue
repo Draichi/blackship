@@ -75,11 +75,13 @@
   export default {
     data () {
       return {
+        // how its gonna be the database?
+        // make a countries query here
         selectItems: [
           { text: 'BAHRAIN' },
           { text: 'BELARUS' },
           { text: 'BHUTAN' },
-          { text: 'BRUNEI' }
+          { text: 'BARBADOS' }
         ],
         selectEl: null,
         e1: 0,

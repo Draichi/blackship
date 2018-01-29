@@ -36,9 +36,16 @@
     data () {
       return {
         allPosts: {},
-        selected: [2],
-        variaveis: {
-          country: String(this.$store.state.searchObj.country)
+        selected: [0],
+        objQuery: {
+          country: this.$store.state.searchObj.country,
+          weight: parseInt(this.$store.state.searchObj.weight),
+          length: parseInt(this.$store.state.searchObj.length),
+          width: parseInt(this.$store.state.searchObj.width),
+          height: parseInt(this.$store.state.searchObj.height),
+          LWH: parseInt(this.$store.state.searchObj.length *
+            this.$store.state.searchObj.width *
+            this.$store.state.searchObj.height)
         }
       }
     },
@@ -46,10 +53,10 @@
       allPosts: {
         query: FeedQuery,
         variables () {
-          return this.variaveis
+          return this.objQuery
         },
         skip () {
-          return !this.variaveis
+          return !this.objQuery
         }
       }
     },

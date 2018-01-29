@@ -2,7 +2,11 @@
 
 # Shipping Calculator
 
-[Live Demo](https://ads "live")
+[Live Demo](https://youtu.be/5GZQU8T8b0E "live")
+
+
+[API](https://api.graph.cool/simple/v1/cjcupexrw13wv0152imgofd8l "api")
+
 
 ## Build Setup
 
@@ -13,5 +17,3 @@ npm i
 # serve with hot reload at localhost:8080
 npm start
 ```
-
-PS: database populated w/ small amount
